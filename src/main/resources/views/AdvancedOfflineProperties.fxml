@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="437.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdvancedOfflineProperties">
+   <children>
+      <ButtonBar fx:id="buttonBar" layoutX="11.0" layoutY="383.0" prefHeight="40.0" prefWidth="640.0">
+        <buttons>
+        	<Button fx:id="back" mnemonicParsing="false" text="Back" />
+        	<Button fx:id="applyBack" mnemonicParsing="false" text="Apply &amp; Back" />
+        </buttons>
+      </ButtonBar>
+      <ScrollPane layoutX="125.0" layoutY="88.0" prefHeight="268.0" prefWidth="421.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="448.0" prefWidth="405.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" layoutX="0.0" layoutY="0.0" prefHeight="447.0" prefWidth="405.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="111.0" text="SQLite Directory">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="86.0" prefHeight="17.0" prefWidth="111.0" text="Offline Query">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="151.0" prefHeight="17.0" prefWidth="111.0" text="Derby Path">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="216.0" prefHeight="17.0" prefWidth="111.0" text="Derby Cleanup">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="281.0" prefHeight="17.0" prefWidth="111.0" text="Derby Name">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="345.0" prefHeight="17.0" prefWidth="111.0" text="Derby Username">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="410.0" prefHeight="17.0" prefWidth="111.0" text="Derby Password">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="298.0" prefHeight="17.0" prefWidth="111.0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="362.0" prefHeight="17.0" prefWidth="111.0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="427.0" prefHeight="17.0" prefWidth="111.0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="103.0" prefHeight="17.0" prefWidth="111.0" text="Page Size">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextField fx:id="ezmaxmobileOfflinePagesize" layoutY="79.0" prefHeight="25.0" prefWidth="280.0" />
+                              <TextField fx:id="ezmaxmobileOfflineSqliteDirectory" layoutY="14.0" prefHeight="25.0" prefWidth="280.0" />
+                              <TextField fx:id="ezmaxmobileDBPath" layoutY="144.0" prefHeight="25.0" prefWidth="280.0" />
+                              <TextField fx:id="ezmaxmobileDBUsername" layoutY="339.0" prefHeight="25.0" prefWidth="280.0" />
+                              <Label layoutX="4.0" layoutY="40.0" prefHeight="17.0" prefWidth="296.0" text="Directory path to the SQLite database" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="104.0" prefHeight="17.0" prefWidth="296.0" text="Maximum number of records returned for a " textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="169.0" prefHeight="17.0" prefWidth="296.0" text="Path to the EZMaxMobile derby database" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="234.0" prefHeight="17.0" prefWidth="296.0" text="Amount of days derby transactions are cleaned up" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="4.0" layoutY="299.0" prefHeight="17.0" prefWidth="296.0" text="Name of the Derby database" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="363.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8" />
+                              <Label layoutX="5.0" layoutY="428.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="121.0" prefHeight="17.0" prefWidth="296.0" text="given query at a time" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="4.0" layoutY="186.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="4.0" layoutY="316.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <Label layoutX="5.0" layoutY="445.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Label>
+                              <TextField fx:id="ezmaxmobileDBCleanupdays" layoutY="209.0" prefHeight="25.0" prefWidth="280.0" />
+                              <TextField fx:id="ezmaxmobileDBName" layoutY="274.0" prefHeight="25.0" prefWidth="280.0" />
+                              <TextField fx:id="ezmaxmobileDBPassword" layoutY="404.0" prefHeight="25.0" prefWidth="280.0" />
+                              <Label layoutX="5.0" layoutY="249.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+     <AnchorPane fx:id="banner" prefHeight="88.0" prefWidth="680.0">
+         <children>
+            <ImageView fx:id="logoSmall" fitHeight="84.0" fitWidth="101.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../main/resources/images/EZMax_logo_small.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="title" layoutX="91.0" layoutY="21.0" prefHeight="17.0" prefWidth="519.0" text="Advanced Offline Properties">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

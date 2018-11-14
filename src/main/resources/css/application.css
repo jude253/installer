@@ -1,0 +1,17 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#installer {
+	-fx-font-family: ProximaNovaRgRegular,sans-serif;
+	-fx-font-size: 96px;
+	-fx-color: #6d6d6f;
+}
+
+#title {
+	-fx-font-family: ProximaNovaRgRegular,sans-serif;
+	-fx-font-size: 36px;
+	-fx-color: #6d6d6f;
+}
+
+#banner {
+	-fx-background-color: #e7e7e7;
+	-fx-fill-width: true;
+}

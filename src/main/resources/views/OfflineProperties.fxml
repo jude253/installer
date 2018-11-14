@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="437.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OfflineProperties">
+   <children>
+      <ButtonBar fx:id="buttonBar" layoutX="11.0" layoutY="383.0" prefHeight="40.0" prefWidth="640.0">
+        <buttons>
+        	<Button fx:id="prev" mnemonicParsing="false" text="Prev" />
+        	<Button fx:id="next" mnemonicParsing="false" text="Next" />
+        </buttons>
+      </ButtonBar>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="125.0" layoutY="88.0" prefHeight="264.0" prefWidth="421.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="6.0" prefHeight="17.0" prefWidth="111.0" text="Auto Sync Enabled">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label layoutX="6.0" layoutY="71.0" prefHeight="17.0" prefWidth="111.0" text="Auto Sync Interval">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label layoutX="6.0" layoutY="137.0" prefHeight="17.0" prefWidth="111.0" text="Offline StartCenter">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="autoSyncInterval" layoutY="67.0" prefHeight="25.0" prefWidth="292.0" />
+                  <ChoiceBox fx:id="autoSyncEnabled" layoutY="2.0" prefHeight="25.0" prefWidth="292.0" />
+                  <ChoiceBox fx:id="offlineStartCenter" layoutY="132.0" prefHeight="25.0" prefWidth="292.0" />
+                  <Button fx:id="advOfflineProps" layoutX="67.0" layoutY="215.0" mnemonicParsing="false" text="Adavanced Offline Properties">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="5.0" layoutY="27.0" prefHeight="17.0" prefWidth="296.0" text="Automatically Synchronize Offline Data" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="44.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="92.0" prefHeight="17.0" prefWidth="296.0" text="In Minutes" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="109.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="157.0" prefHeight="17.0" prefWidth="296.0" text="Enable StartCenters For Offline Mode" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="5.0" layoutY="174.0" prefHeight="17.0" prefWidth="296.0" textFill="#a8a8a8">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+     <AnchorPane fx:id="banner" prefHeight="88.0" prefWidth="680.0">
+         <children>
+            <ImageView fx:id="logoSmall" fitHeight="84.0" fitWidth="101.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../main/resources/images/EZMax_logo_small.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="title" layoutX="91.0" layoutY="21.0" prefHeight="17.0" prefWidth="519.0" text="Offline Properties">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

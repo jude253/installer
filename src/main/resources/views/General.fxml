@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootPane" prefHeight="437.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.<SET_THIS>Controller">
+  <children>
+      <ButtonBar fx:id="buttonBar" layoutX="11.0" layoutY="383.0" prefHeight="40.0" prefWidth="640.0">
+        <buttons>
+        	<Button fx:id="prev" mnemonicParsing="false" text="Prev" />
+        	<Button fx:id="next" mnemonicParsing="false" text="Next" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

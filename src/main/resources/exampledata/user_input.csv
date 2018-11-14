@@ -1,0 +1,40 @@
+nodeName,ctgNode01
+ezmaxmobile.license,wbXw5ROt2Ymp9SnmjEt086/0713IVX597r09yXeHk/791vHGHZrYozvOF7VUC0ot
+ezmaxmobile.offline.enabled,true
+cellName,ctgCell01
+virtualHostName,emmHostTest
+appName,emmTest
+webServerName,webserver1
+MaximoEarFileLocation,C:\Program Files (x86)\IBM\WebSphere\AppServer\profiles\ctgAppSrv01\installedApps\ctgCell01\MAXIMO.ear
+maximo.db.password,maximo
+serverName,emmServerTest
+maximo.db.driver,oracle.jdbc.driver.OracleDriver
+maximo.db.schema,maximo
+contextRoot,/emm
+maximo.db.username,maximo
+maximo.db.type,ORACLE
+startServer,true
+maximo.db.url,jdbc:oracle:thin:@//IP-MXD76-ORA02.com:1521/ctginst1
+initialHeapSize,2048
+maximo.server,192.168.1.149:13400/MAXIMO
+WebSphereBinPathAndFile,C:\Program Files (x86)\IBM\WebSphere\AppServer\profiles\ctgAppSrv01\bin
+EMMPathAndFile,C:\Users\Administrator\Desktop\New Folder\ezmaxmobile.war
+maximumHeapSize,2048
+webshpere.password,Captain1
+websphere.username,wasadmin
+ezmaxmobile.push.httpsenabled,false
+ezmaxmobile.offline.startcenter.enabled,false
+ezmaxmobile.push.enabled,false
+ezmaxmobile.ssl.enabled,false
+ezmaxmobile.offline.enabled,false
+ezmaxmobile.offline.autosync.enabled,false
+ezmaxmobile.proxy.enabled,false
+ezmaxmobile.esri.enabled,false
+ezmaxmobile.push.proxyserver.enabled,false
+LDAPConnection,false
+maximo.doclinks.folder,Images
+ezmaxmobile.maxsession.timeout,10
+ezmaxmobile.drilldownlimit,50
+ezmaxmobile.proxy.server,<server name>
+ezmaxmobile.esri.mapserver,http://<server name>:<port>/arcgis/rest/services/<service name>/<map server>
+ezmaxmobile.offline.autosync.interval,20

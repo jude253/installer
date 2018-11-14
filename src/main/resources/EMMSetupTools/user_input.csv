@@ -1,0 +1,17 @@
+ezmaxmobile.push.httpsenabled,false
+ezmaxmobile.offline.startcenter.enabled,false
+ezmaxmobile.push.enabled,false
+ezmaxmobile.ssl.enabled,false
+ezmaxmobile.offline.enabled,false
+ezmaxmobile.offline.autosync.enabled,false
+ezmaxmobile.proxy.enabled,false
+ezmaxmobile.esri.enabled,false
+ezmaxmobile.push.proxyserver.enabled,false
+startServer,false
+LDAPConnection,false
+maximo.doclinks.folder,Images
+ezmaxmobile.maxsession.timeout,10
+ezmaxmobile.drilldownlimit,50
+ezmaxmobile.proxy.server,<server name>
+ezmaxmobile.esri.mapserver,http://<server name>:<port>/arcgis/rest/services/<service name>/<map server>
+ezmaxmobile.offline.autosync.interval,20

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="437.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Installation">
+  <children>
+      <ButtonBar fx:id="buttonBar" layoutX="11.0" layoutY="383.0" prefHeight="40.0" prefWidth="640.0">
+        <buttons>
+        	<Button fx:id="exit" mnemonicParsing="false" text="Exit" />
+            <Button fx:id="prev" mnemonicParsing="false" text="Prev" />
+            <Button fx:id="finish" mnemonicParsing="false" text="Finish" />
+        </buttons>
+      </ButtonBar>
+      <ProgressBar fx:id="pb" layoutX="46.0" layoutY="284.0" prefHeight="33.0" prefWidth="588.0" progress="0.0" />
+      <Label fx:id="txtState" layoutX="341.0" layoutY="253.0" text="Label" />
+      <Label layoutX="279.0" layoutY="253.0" prefHeight="17.0" prefWidth="49.0" text="Progress:" />
+      <AnchorPane fx:id="banner" prefHeight="88.0" prefWidth="680.0">
+         <children>
+            <ImageView fx:id="logoSmall" fitHeight="84.0" fitWidth="101.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../main/resources/images/EZMax_logo_small.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="title" layoutX="91.0" layoutY="21.0" prefHeight="17.0" prefWidth="519.0" text="EZMaxMobile Installation ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

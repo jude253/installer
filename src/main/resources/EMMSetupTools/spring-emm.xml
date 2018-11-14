@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:lang="http://www.springframework.org/schema/lang"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+                           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd"
+	   default-lazy-init="false"> <!-- false == On, true == Off -->
+	   
+	<bean id="baseOfflineInitAction" class="com.interprosoft.ezmaxmobile.offline.action.BaseOfflineInitAction" init-method="initdb">
+	</bean>  
+	
+	<bean id="baseOfflineDatabaseAction" class="com.interprosoft.ezmaxmobile.offline.action.BaseOfflineDatabaseAction" init-method="initdb">
+	</bean>
+	
+	<bean id="emmRequestTracker" class="com.interprosoft.ezmaxmobile.offline.model.EMMRequestTracker">
+	</bean>
+	
+	<bean id="offlineResources" class="com.interprosoft.ezmaxmobile.offline.model.OfflineResources" scope="singleton">
+	</bean>
+		
+	<bean id="dbcron" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="triggerForDBCleanup"/>
+				<ref local="triggerForDBCache"/>
+				<ref local="triggerForOfflineDBCleanup"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="triggerForDBCache" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="baseOfflineDatabaseAction"/>
+				<property name="targetMethod" value="cacheDB"/>
+				<property name="concurrent" value="false"/>
+			</bean>
+		</property>
+		<property name="startDelay" value="300000"/>
+		<property name="repeatInterval" value="3600000"/> <!-- 3600000 = Repeat Hourly -->
+	</bean>
+	
+	<bean id="triggerForOfflineDBCleanup" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail">
+			<bean id="sqliteCleanupSynchronizeJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="baseOfflineDatabaseAction"/>
+				<property name="targetMethod" value="sqliteCleanup"/>
+				<property name="concurrent" value="false"/>
+			</bean>
+		</property>
+		<property name="startDelay" value="15000"/>
+		<property name="repeatInterval" value="3600000"/> <!-- 3600000 = Repeat Hourly -->
+	</bean>
+	
+	<bean id="triggerForDBCleanup" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="baseOfflineInitAction"/>
+				<property name="targetMethod" value="dbCleanup"/>
+				<property name="concurrent" value="false"/>
+			</bean>
+		</property>
+		<property name="startDelay" value="60000"/>
+		<property name="repeatInterval" value="86400000"/> <!-- Once a day -->
+	</bean>
+		
+</beans>
+

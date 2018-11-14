@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="437.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OfflineMode">
+   <children>
+      <ButtonBar fx:id="buttonBar" layoutX="11.0" layoutY="383.0" prefHeight="40.0" prefWidth="640.0">
+        <buttons>
+        	<Button fx:id="prevLDAP" mnemonicParsing="false" text="Prev" />
+        	<Button fx:id="nextOffline" mnemonicParsing="false" text="Next" />
+        </buttons>
+      </ButtonBar>
+     <AnchorPane fx:id="banner" prefHeight="88.0" prefWidth="680.0">
+         <children>
+            <ImageView fx:id="logoSmall" fitHeight="84.0" fitWidth="101.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../main/resources/images/EZMax_logo_small.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="title" layoutX="91.0" layoutY="21.0" prefHeight="17.0" prefWidth="519.0" text="Offline Mode">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="183.0" layoutY="162.0" prefHeight="40.0" prefWidth="304.0">
+         <children>
+            <Label layoutX="14.0" layoutY="12.0" prefHeight="17.0" prefWidth="186.0" text="Offline Mode Enabled?">
+               <font>
+                  <Font size="12.0" />
+               </font></Label>
+            <ChoiceBox fx:id="offlineMode" layoutX="200.0" layoutY="14.0" prefHeight="14.0" prefWidth="75.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
