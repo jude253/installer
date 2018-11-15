@@ -49,7 +49,9 @@ public class WSAdminLogin extends PageService{
     }
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-    	next.setDisable(true);
+    	if(Variables.devMode==false) {
+    		next.setDisable(true);
+    	}
     	setUpProgress();
     	statusFromFile = ExternalService.setwsLoginTest();
     	if(statusFromFile == true) {

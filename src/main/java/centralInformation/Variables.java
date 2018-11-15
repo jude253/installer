@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.*;
 
 public class Variables {
+	public static boolean devMode = true;
+	
 	static List<String> file = new ArrayList<String>();
 	public static Map<String,String> userInputMap = new HashMap<String,String>();
 	static Map<String,String> input2 = new HashMap<String,String>();

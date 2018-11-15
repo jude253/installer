@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import centralInformation.Variables;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import services.ExternalService;
@@ -41,20 +42,19 @@ public class WSExistingInformation extends PageService{
 	public void initialize(URL location, ResourceBundle resources) {
     	
     	Map<String,List<String>> mapOfLists = ExternalService.wsChoiceBoxInput("AllWSInfo.csv");
-    	nodeName.getItems().addAll(mapOfLists.get("Node"));
-    	cellName.getItems().addAll(mapOfLists.get("Cell"));
-    	webServerName.getItems().addAll(mapOfLists.get("Server"));
-    	webServerName.getItems().add("none");
-//    	for (Map.Entry<String, List<String>> entry : mapOfLists.entrySet())
-//		{
-//			String key = entry.getKey();
-//			List<String> value = entry.getValue();
-//			for(String str : value) {
-//				System.out.println(key + "  " + str);
-//			}
-//		    
-//		    
-//		}
+    	if(Variables.devMode==false) {
+    		nodeName.getItems().addAll(mapOfLists.get("Node"));
+        	cellName.getItems().addAll(mapOfLists.get("Cell"));
+        	webServerName.getItems().addAll(mapOfLists.get("Server"));
+        	webServerName.getItems().add("none");
+    		
+    	} else {
+    		nodeName.getItems().addAll("devMode");
+        	cellName.getItems().addAll("devMode");
+        	webServerName.getItems().addAll("devMode");
+    	}
+    	
+
     	setCurrentPageInfo();
     	setCommon();
     	

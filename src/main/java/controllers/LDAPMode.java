@@ -9,35 +9,39 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import services.PageService;
-public class MaximoInformation extends PageService {
+public class LDAPMode extends PageService {
 	
+
 	@FXML
-	private TextField driver;
+	private ChoiceBox<String> LDAPMode;
 	@FXML
-	private TextField url;
-	@FXML
-	private TextField schema;
-	@FXML
-	private ChoiceBox<String> type;
+	private Button nextLDAP;
 	
 	private void setCurrentPageInfo() {
 		//these are the names of interactive TextFields on the page and what their fx:id is
-		inputFields.put("maximo.db.driver",driver);
-	    inputFields.put("maximo.db.url",url);
-	    inputFields.put("maximo.db.schema",schema);
+	
 	    	
 	    //this is the previous page and the next page in the sequence
-	    prevNext.put("prev","WSAdminLogin.fxml");
-	    prevNext.put("next","LDAPMode.fxml");
+	    prevNext.put("prev","MaximoInformation.fxml");
+	    prevNext.put("next","MaximoInformationCont.fxml");
 	    
-	    inputChoiceBoxes.put("maximo.db.type",type);
+	    
+	    inputChoiceBoxes.put("LDAPConnection", LDAPMode);
 	    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		type.getItems().addAll("SQLSERVER","ORACLE","DB2");
+		LDAPMode.getItems().addAll("true","false");
 		setCurrentPageInfo(); 
 		setCommon();
+		nextLDAP.setOnAction(e -> {
+			getUserInput();
+			if(LDAPMode.getValue().equals("true")) {
+				pageChange("MaximoInformationContLDAP.fxml");
+			} else {
+				pageChange(prevNext.get("next"));
+			}
+		});
 	}
 }
 	

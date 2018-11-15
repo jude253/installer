@@ -25,7 +25,7 @@ public class MaximoInformationCont extends PageService{
     	inputFields.put("maximo.db.password", password);
     	
     	//this is the previous page and the next page in the sequence
-    	prevNext.put("prev","MaximoInformation.fxml");
+    	prevNext.put("prev","LDAPMode.fxml");
     	prevNext.put("next","OfflineMode.fxml");
     	
     }

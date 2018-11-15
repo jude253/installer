@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import centralInformation.Variables;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -28,7 +29,7 @@ public class MaximoInformationContLDAP extends PageService{
     	inputFields.put("maximo.db.password", password);
     	
     	//this is the previous page and the next page in the sequence
-    	prevNext.put("prev","MaximoInformation.fxml");
+    	prevNext.put("prev","LDAPMode.fxml");
     	prevNext.put("next","OfflineMode.fxml");
     	
     	inputChoiceBoxes.put("maximoServerName", maximoServerName);
@@ -39,7 +40,13 @@ public class MaximoInformationContLDAP extends PageService{
     	setCurrentPageInfo();
     	setCommon();
     	Map<String,List<String>> mapOfLists = ExternalService.wsChoiceBoxInput("AllWSInfo.csv");
-    	maximoServerName.getItems().addAll(mapOfLists.get("Server"));
+    	if(Variables.devMode==false) {
+    		maximoServerName.getItems().addAll(mapOfLists.get("Server"));
+    		
+    	} else {
+    		maximoServerName.getItems().addAll("devMode");
+    	}
+    	
     	maximoServerName.getUserData();
 	}
     
